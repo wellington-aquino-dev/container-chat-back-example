@@ -18,3 +18,11 @@ jobs:
         run: 
           npm install
           npm test
+      - name: Build Image
+        run: docker build -t back .
+      - name: Run Builded Image
+        run: docker run -p 8082:8080 -t back
+      - name: View Images
+        run: docker ps
+        
+      
